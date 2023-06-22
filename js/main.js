@@ -1,3 +1,6 @@
+// imports
+import Slider from './slider.js'
+
 // Header Scroll 
 const header = document.querySelector("header")
 
@@ -24,3 +27,11 @@ Array.from(menu.children).forEach(el => {
     menu.classList.remove("active")
   })
 })
+
+// Gallery Image Slider
+const imgs = document.querySelectorAll("section.gallery .container .image-slider .img-container img")
+const preBtn = document.getElementById("preBtn")
+const nextBtn = document.getElementById("nextBtn")
+const bulletsWrapper = document.querySelector("section.gallery .container .image-slider .controls .bullets")
+
+new Slider(imgs, preBtn, nextBtn, bulletsWrapper)
