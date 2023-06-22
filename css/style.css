@@ -772,3 +772,107 @@ section.testis .container .content .box .owner p.title {
 }
 
 /* End Testimonials Section */
+
+/* Contact Section */
+
+section.contact {
+  background: url("../imgs/contact.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+section.contact .container form {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+section.contact .container form .inputs,
+section.contact .container form .msg {
+  flex: 1;
+}
+
+section.contact .container form .inputs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
+
+section.contact .container form .inputs input,
+section.contact .container form .msg textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #999;
+  font-size: 16px;
+}
+
+section.contact .container form .inputs input::placeholder,
+section.contact .container form .msg textarea::placeholder {
+  transition: .2s;
+}
+
+section.contact .container form .inputs input:focus::placeholder,
+section.contact .container form .msg textarea:focus::placeholder {
+  opacity: 0;
+}
+
+section.contact .container form .msg {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+section.contact .container form .msg textarea {
+  min-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  height: 182px;
+  resize: none;
+}
+
+section.contact .container form .msg button {
+  padding: 10px;
+  width: 100%;
+  font-size: 20px;
+  outline: none;
+  border: 1px solid #999;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  section.contact .container form {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/* End Contact Section */
+
+/* Footer */
+
+footer {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  font-weight: 400;
+  color: #fff;
+}
+
+footer .container p span {
+  color: var(--main-color);
+}
+
+/* End Footer */
