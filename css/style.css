@@ -26,6 +26,10 @@ section {
   padding: 50px 0;
 }
 
+section:nth-child(even) {
+  background-color: #f1f1f1;
+}
+
 .container {
   margin: 0 auto;
   padding: 0 20px;
@@ -53,6 +57,13 @@ section {
   .container {
     max-width: 1300px;
   }
+}
+
+h1.special-heading {
+  font-size: 50px;
+  color: var(--main-color);
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /* End Global Rules */
@@ -257,9 +268,7 @@ section.about .container .text {
 }
 
 section.about .container .text h1 {
-  font-size: 50px;
-  color: var(--main-color);
-  margin-bottom: 20px;
+  width: fit-content;
 }
 
 section.about .container .text p {
@@ -281,3 +290,58 @@ section.about .container .img img {
 }
 
 /* End About Section */
+
+/* Skills Section */
+
+section.skills .container .skills-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 30px;
+}
+
+section.skills .container .skills-container .skill {
+  background-color: #fff;
+  padding: 20px;
+  position: relative;
+  padding-top: 35px;
+  border-radius: 5px;
+}
+
+section.skills .container .skills-container .skill h2.title {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  transform: translateY(-50%);
+  font-size: 16px;
+  padding: 5px;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+section.skills .container .skills-container .skill .progress {
+  width: 100%;
+  background-color: #eee;
+  height: 30px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+section.skills .container .skills-container .skill .progress .bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--main-color);
+  height: 100%;
+}
+
+@media (max-width: 767px) {
+  section.skills .container .skills-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* End Skills Section */
