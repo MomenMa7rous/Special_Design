@@ -659,3 +659,51 @@ section.timeline .container .year-container .content .box:nth-child(even)::after
 }
 
 /* End Timeline Section */
+
+/* Features Section */
+
+section.features .container .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  row-gap: 50px;
+}
+
+section.features .container .content .feat {
+  text-align: center;
+}
+
+section.features .container .content .feat .img {
+  width: fit-content;
+  margin: 0 auto 20px;
+}
+
+section.features .container .content .feat .img img {
+  width: 100px;
+}
+
+section.features .container .content .feat h2.title {
+  font-size: 22px;
+  font-weight: 600;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+section.features .container .content .feat h2.title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background: var(--main-color);
+}
+
+section.features .container .content .feat p {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* End Features Section */
