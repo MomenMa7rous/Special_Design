@@ -326,7 +326,6 @@ section.skills .container .skills-container .skill .progress {
   background-color: #eee;
   height: 30px;
   border-radius: 5px;
-  overflow: hidden;
   position: relative;
 }
 
@@ -336,6 +335,12 @@ section.skills .container .skills-container .skill .progress .bar {
   left: 0;
   background-color: var(--main-color);
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  color: #fff;
 }
 
 @media (max-width: 767px) {
@@ -347,6 +352,32 @@ section.skills .container .skills-container .skill .progress .bar {
 /* End Skills Section */
 
 /* Gallery Section */
+
+section.gallery .container .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+}
+
+section.gallery .container .content .image-slider {
+  flex: 2;
+  user-select: none;
+}
+
+section.gallery .container .content .img {
+  flex: 1;
+}
+
+section.gallery .container .content .img img {
+  width: 100%;
+}
+
+@media (max-width: 767px) {
+  section.gallery .container .content .img {
+    display: none;
+  }
+}
 
 section.gallery .container .image-slider .img-container {
   position: relative;
@@ -365,14 +396,15 @@ section.gallery .container .image-slider .img-container img {
   top: 0;
   transform: translate(0, -100%);
   width: 100%;
-  transition: .6s;
+  transition: .4s;
+  cursor: pointer;
 }
 
 section.gallery .container .image-slider .img-container img.active {
   position: relative;
   transform: translateX(0);
   opacity: 1;
-  transition-delay: .6s;
+  transition-delay: .4s;
 }
 
 section.gallery .container .image-slider .controls {
@@ -437,4 +469,193 @@ section.gallery .container .image-slider .controls .btns button.disabled {
   }
 }
 
+section.gallery .container .image-slider .popup {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000099;
+  z-index: 10000000000;
+  padding: 0 15px;
+  display: none;
+}
+
+section.gallery .container .image-slider .popup img{
+  max-width: 1000px;
+  border-radius: 5px;
+}
+
+section.gallery .container .image-slider .popup span.exit {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  background-color: #fff;
+  color: #000;
+  font-weight: 900;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  section.gallery .container .image-slider .popup img {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 992px) {
+  section.gallery .container .image-slider .popup img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  section.gallery .container .image-slider .popup img {
+    max-width: 340px;
+  }
+}
+
 /* End Gallery Section */
+
+/* Timeline Section */
+
+section.timeline .container {
+  position: relative;
+}
+
+section.timeline .container h1.special-heading {
+  background-color: #f1f1f1;
+  z-index: 1000;
+  position: relative;
+}
+
+section.timeline .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 100%;
+  background: var(--main-color);
+}
+
+section.timeline .container .year-container {
+  position: relative;
+}
+
+section.timeline .container .year-container .content {
+  width: calc(50% - 40px);
+  padding: 50px 0 30px;
+}
+
+section.timeline .container .year-container:last-of-type .content {
+  padding-bottom: 0;
+}
+
+section.timeline .container span.year {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px;
+  display: block;
+  background-color: var(--main-color);
+  color: #fff;
+  border-radius: 5px;
+}
+
+section.timeline .container .year-container .content .box {
+  background-color: #fff;
+  padding: 15px;
+  margin-bottom: 10px;
+  text-align: right;
+  position: relative;
+}
+
+section.timeline .container .year-container .content .box h2.title {
+  color: var(--main-color);
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+section.timeline .container .year-container .content .box p {
+  line-height: 1.8;
+  color: #666;
+}
+
+section.timeline .container .year-container .content .box::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 0;
+  transform: translateX(100%);
+  border: 15px solid;
+  border-color: transparent transparent transparent #FFF;
+}
+
+section.timeline .container .year-container .content .box::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: -40px;
+  transform: translate(50%, 25%);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--main-color);
+}
+
+section.timeline .container .year-container .content .box:nth-child(even) {
+  text-align: left;
+  transform: translateX(calc(100% + 80px));
+}
+
+section.timeline .container .year-container .content .box:nth-child(even)::before {
+  right: initial;
+  left: 0;
+  transform: translateX(-100%);
+  border-color: transparent #fff transparent transparent;
+} 
+section.timeline .container .year-container .content .box:nth-child(even)::after {
+  right: initial;
+  left: -40px;
+  transform: translateX(-50%);
+} 
+
+@media (max-width: 767px) {
+  section.timeline .container .year-container .content {
+    width: 100%;
+  }
+
+  section.timeline .container .year-container .content .box {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  section.timeline .container .year-container .content .box:nth-child(even) {
+    text-align: center;
+    transform: translateX(0);
+    margin-bottom: 20px;
+  }
+
+  section.timeline .container .year-container .content .box::before,
+  section.timeline .container .year-container .content .box::after,
+  section.timeline .container .year-container .content .box:nth-child(even):before,
+  section.timeline .container .year-container .content .box:nth-child(even):after {
+    content: none;
+  }
+}
+
+/* End Timeline Section */

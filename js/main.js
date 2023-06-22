@@ -33,5 +33,22 @@ const imgs = document.querySelectorAll("section.gallery .container .image-slider
 const preBtn = document.getElementById("preBtn")
 const nextBtn = document.getElementById("nextBtn")
 const bulletsWrapper = document.querySelector("section.gallery .container .image-slider .controls .bullets")
+const popup = document.querySelector("section.gallery .container .image-slider .popup")
+const exitBtn = document.querySelector("section.gallery .container .image-slider .popup span.exit").cloneNode(true)
 
 new Slider(imgs, preBtn, nextBtn, bulletsWrapper)
+
+popup.addEventListener("click", (e) => {
+  if (e.target !== popup.lastElementChild) {
+    popup.innerHTML = ''
+    popup.style.display = 'none'
+  }
+})
+
+imgs.forEach(img => {
+  img.addEventListener("click", (e) => {
+    popup.append(exitBtn)
+    popup.append(e.currentTarget.cloneNode())
+    popup.style.display = 'flex'
+  })
+})
