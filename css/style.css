@@ -66,6 +66,12 @@ h1.special-heading {
   text-align: center;
 }
 
+@media (max-width: 767px) {
+  h1.special-heading {
+    font-size: 40px;
+  }
+}
+
 /* End Global Rules */
 
 /* Header */
@@ -707,3 +713,62 @@ section.features .container .content .feat p {
 }
 
 /* End Features Section */
+
+/* Testimonials Section */
+
+section.testis {
+  background: linear-gradient(to right, var(--main-color) 50%, #000000 50%);
+}
+
+section.testis .container h1 {
+  color: #fff;
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+
+section.testis .container .content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+section.testis .container .content .box {
+  background-color: #fff;
+  padding: 20px;
+}
+
+section.testis .container .content .box p.testi-content {
+  line-height: 1.8;
+  font-style: italic;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+section.testis .container .content .box .owner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+section.testis .container .content .box .owner .img img {
+  border-radius: 50%;
+}
+
+section.testis .container .content .box .owner h3.name {
+  font-size: 18px;
+}
+
+section.testis .container .content .box .owner p.title {
+  color: #666;
+  font-weight: 300;
+}
+
+@media (max-width: 767px) {
+  section.testis .container h1 {
+    text-align: center;
+    font-size: 40px;
+  }
+}
+
+/* End Testimonials Section */
