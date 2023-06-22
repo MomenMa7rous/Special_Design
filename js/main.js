@@ -1,6 +1,9 @@
 // imports
 import Slider from './slider.js'
 
+// Menu Overlay
+const overlay = document.querySelector("header ul.mobile-nav + .overlay")
+
 // Header Scroll 
 const header = document.querySelector("header")
 
@@ -25,11 +28,20 @@ const menu = document.querySelector("header ul.mobile-nav")
 
 menuBtn.addEventListener("click", () => {
   menu.classList.toggle("active")
+  overlay.classList.toggle("active")
+})
+
+document.addEventListener("click", (e) => {
+  if (e.target !== menuBtn && e.target !== menuBtn.firstElementChild && e.target !== menu && Array.from(menu.children).includes(e.target) === false) {
+    menu.classList.remove("active")
+    overlay.classList.remove("active")
+  }
 })
 
 Array.from(menu.children).forEach(el => {
   el.firstElementChild.addEventListener("click", () => {
     menu.classList.remove("active")
+    overlay.classList.remove("active")
   })
 })
 
@@ -179,3 +191,41 @@ resetBtn.addEventListener("click", () => {
   // Background Default Behavior
   backgroundDefaultBehavior()
 })
+
+// Scroll To Top Button
+const sttBtn = document.querySelector("button.stt")
+
+sttBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  })
+})
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 200) {
+    sttBtn.classList.add("active")
+  } else {
+    sttBtn.classList.remove("active")
+  }
+})
+
+// Header Border Fill On Scroll
+const headerBorder = document.querySelector('header .border')
+
+controlHeaderBorder()
+
+window.addEventListener("scroll", () => {
+  controlHeaderBorder()
+})
+
+function controlHeaderBorder() {
+  if (window.scrollY >= 20) {
+    headerBorder.style.opacity = '1'
+  } else {
+    headerBorder.style.opacity = '0'
+  }
+  let percentage = (((window.scrollY + window.innerHeight) / document.body.clientHeight) * 100)
+  headerBorder.style.width = `${percentage}%`
+}

@@ -1,5 +1,9 @@
 /* Global Rules */
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --main-color: #FF9800;
 }
@@ -12,6 +16,7 @@
 
 body {
   font-family: 'Poppins', sans-serif;
+  position: relative;
 }
 
 ul {
@@ -86,13 +91,24 @@ header {
   transition: .3s;
 }
 
+header .border {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--main-color);
+  transition: .3s;
+  opacity: 0;
+}
+
 header > .container{
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-header .container .logo {
+header .container .logo a {
   font-size: 30px;
   font-weight: 900;
   color: var(--main-color);
@@ -152,6 +168,23 @@ header ul.mobile-nav {
   top: 0;
   min-height: 100vh;
   transform: translateX(-100%);
+  z-index: 1000000000000000;
+}
+
+header ul.mobile-nav + .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #00000050;
+  z-index: 100000;
+  transform: translateX(-100%);
+  transition: .3s;
+}
+
+header ul.mobile-nav + .overlay.active {
+  transform: translateX(0);
 }
 
 header ul.mobile-nav.active {
@@ -165,7 +198,7 @@ header ul.mobile-nav li a {
 
 header ul.mobile-nav li {
   padding: 15px 15px;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--main-color);
 }
 
 header ul.mobile-nav li:last-child {
@@ -698,7 +731,7 @@ section.features .container .content .feat p {
 /* Testimonials Section */
 
 section.testis {
-  background: linear-gradient(to right, var(--main-color) 50%, #000000 50%);
+  background: linear-gradient(to right, var(--main-color) 50%, #333 50%);
 }
 
 section.testis .container h1 {
@@ -872,7 +905,7 @@ footer .container p span {
   transform: translateX(-100%);
   transition: .4s;
   border-right: 1px solid #000;
-  padding-top: 80px;
+  padding-top: 85px;
 }
 
 .settings.active {
@@ -964,3 +997,35 @@ footer .container p span {
 }
 
 /* End Settings Bar */
+
+/* Scroll To Top Button */
+
+button.stt {
+  border: 1px solid #000;
+  position: fixed;
+  bottom: 40px;
+  font-size: 20px;
+  color: #fff;
+  background-color: var(--main-color);
+  z-index: 100000000000000000000000;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  user-select: none;
+  cursor: pointer;
+  right: 0;
+  transform: translateX(100%);
+  transition: .3s;
+  box-shadow: 0 0 15px #00000060;
+  outline: none;
+}
+
+button.stt.active {
+  right: 40px;
+  transform: translateX(0);
+}
+
+/* End Scroll To Top Button */

@@ -17,18 +17,19 @@
 
   <!-- Header -->
   <header>
+    <div class="border"></div>
     <div class="container">
       <div class="logo">
-        <p>Special</p>
+        <a href="#">Special</a>
       </div>
       <nav>
         <ul class="nav">
-          <li><a href="#">About</a></li>
-          <li><a href="#">Skills</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Timeline</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Testimonials</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
         </ul>
         <button id="menuBtn">
           <i class="fa-solid fa-bars"></i>
@@ -36,13 +37,14 @@
       </nav>
     </div>
     <ul class="mobile-nav">
-      <li><a href="#">About</a></li>
-      <li><a href="#">Skills</a></li>
-      <li><a href="#">Gallery</a></li>
-      <li><a href="#">Timeline</a></li>
-      <li><a href="#">Features</a></li>
-      <li><a href="#">Testimonials</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
     </ul>
+    <div class="overlay"></div>
   </header>
   <!-- End Header -->
 
@@ -59,7 +61,7 @@
 
   <!-- About Section -->
 
-  <section class="about">
+  <section class="about" id="about">
     <div class="container">
       <div class="text">
         <h1 class="special-heading">About Us</h1>
@@ -75,7 +77,7 @@
 
   <!-- Skills Section -->
 
-  <section class="skills">
+  <section class="skills" id="skills">
     <div class="container">
       <h1 class="special-heading">Our Skills</h1>
       <div class="skills-container">
@@ -88,19 +90,19 @@
         <div class="skill">
           <h2 class="title">CSS</h2>
           <div class="progress">
-            <div class="bar" style="width: 60%;">60%</div>
+            <div class="bar" style="width: 90%;">90%</div>
           </div>
         </div>
         <div class="skill">
           <h2 class="title">JavaScript</h2>
           <div class="progress">
-            <div class="bar" style="width: 50%;">50%</div>
+            <div class="bar" style="width: 80%;">80%</div>
           </div>
         </div>
         <div class="skill">
           <h2 class="title">Python</h2>
           <div class="progress">
-            <div class="bar" style="width: 90%;">90%</div>
+            <div class="bar" style="width: 60%;">60%</div>
           </div>
         </div>
         <div class="skill">
@@ -123,7 +125,7 @@
 
   <!-- Gallery Section -->
 
-  <section class="gallery">
+  <section class="gallery" id="gallery">
     <div class="container">
       <h1 class="special-heading">Our Gallery</h1>
       <div class="content">
@@ -161,7 +163,7 @@
 
   <!-- Timeline Section -->
 
-  <section class="timeline">
+  <section class="timeline" id="timeline">
     <div class="container">
       <h1 class="special-heading">Timeline</h1>
       <div class="timeline">
@@ -199,7 +201,7 @@
 
   <!-- Features Section -->
 
-  <section class="features">
+  <section class="features" id="features">
     <div class="container">
       <h1 class="special-heading">Our Features</h1>
       <div class="content">
@@ -253,7 +255,7 @@
 
   <!-- Testimonials Section -->
 
-  <section class="testis">
+  <section class="testis" id="testimonials">
     <div class="container">
       <h1>Testimonials</h1>
       <div class="content">
@@ -364,6 +366,14 @@
   </div>
 
   <!-- End Settings Bar -->
+
+  <!-- Scroll To Top Button -->
+
+  <button class="stt">
+    <i class="fa-solid fa-angle-up"></i>
+  </button>
+
+  <!-- End Scroll To Top Button -->
 
   <script src="./js/main.js" type="module"></script>
 </body>
