@@ -229,3 +229,9 @@ function controlHeaderBorder() {
   let percentage = (((window.scrollY + window.innerHeight) / document.body.clientHeight) * 100)
   headerBorder.style.width = `${percentage}%`
 }
+
+// Initialize WOW.js
+new WOW().init()
+
+// Initialize Headroom.js
+new Headroom(header).init()

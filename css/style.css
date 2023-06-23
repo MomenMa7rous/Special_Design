@@ -91,6 +91,15 @@ header {
   transition: .3s;
 }
 
+header.headroom--pinned {
+  transform: translateY(-100%);
+}
+
+header.headroom--unpinned,
+header.headroom--top {
+  transform: translateY(0);
+}
+
 header .border {
   content: "";
   position: absolute;
