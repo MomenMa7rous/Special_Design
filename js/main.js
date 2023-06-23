@@ -170,12 +170,12 @@ choices.forEach(choice => {
   })
 })
 
-let backgrounds = ['../imgs/01.jpg', '../imgs/02.jpg', '../imgs/03.jpg', '../imgs/04.jpg', '../imgs/05.jpg']
+let backgrounds = ['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg']
 
 function randomBackground() {
   let interval = setInterval(() => {
     let randomNumber = Math.floor(Math.random() * backgrounds.length)
-    targetElement.style.cssText = `background: url(${backgrounds[randomNumber]});`
+    targetElement.style.cssText = `background: url(https://raw.githubusercontent.com/MomenMa7rous/Special_Design/main/imgs/${backgrounds[randomNumber]});`
   }, 8000)
   return interval
 }
